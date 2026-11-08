@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200" role="img">
+<title>Wassertropfen über einer ruhigen Wasseroberfläche</title>
+<rect width="320" height="200" fill="#E3E9E0"/>
+<path d="M102 200 V96 a58 58 0 0 1 116 0 V200 Z" fill="#EEF2EC" opacity="1"/>
+<path transform="translate(160 54) scale(1.35)" d="M0 -24 C10 -10 16 -2 16 8 a16 16 0 0 1 -32 0 C-16 -2 -10 -10 0 -24 Z" fill="#C8D3C4"/><path transform="translate(160 54) scale(1.35)" d="M-8 6 a9 9 0 0 0 6 9" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/><path transform="translate(118 86) scale(0.8)" d="M0 -24 C10 -10 16 -2 16 8 a16 16 0 0 1 -32 0 C-16 -2 -10 -10 0 -24 Z" fill="#C8D3C4"/><path transform="translate(118 86) scale(0.8)" d="M-8 6 a9 9 0 0 0 6 9" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/><path transform="translate(204 92) scale(0.9)" d="M0 -24 C10 -10 16 -2 16 8 a16 16 0 0 1 -32 0 C-16 -2 -10 -10 0 -24 Z" fill="#C8D3C4"/><path transform="translate(204 92) scale(0.9)" d="M-8 6 a9 9 0 0 0 6 9" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/><path transform="translate(140 26) scale(0.55)" d="M0 -24 C10 -10 16 -2 16 8 a16 16 0 0 1 -32 0 C-16 -2 -10 -10 0 -24 Z" fill="#C8D3C4"/><path transform="translate(140 26) scale(0.55)" d="M-8 6 a9 9 0 0 0 6 9" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="160" cy="160" rx="100" ry="18" fill="none" stroke="#A4B1A0" stroke-width="2"/>
+<ellipse cx="160" cy="160" rx="66" ry="12" fill="none" stroke="#A4B1A0" stroke-width="2"/>
+<ellipse cx="160" cy="160" rx="32" ry="6" fill="#A4B1A0" opacity=".6"/>
+</svg>

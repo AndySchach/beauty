@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img">
+<title>Behandlungsraum mit Bogenfenster, Liege und Pflanze</title>
+<defs>
+  <linearGradient id="aw" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#F6EDE6"/><stop offset="1" stop-color="#EFE6DC"/>
+  </linearGradient>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#DCE4D9"/><stop offset="1" stop-color="#A4B1A0"/>
+  </linearGradient>
+  <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#FFFFFF" stop-opacity=".5"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<rect width="480" height="300" fill="url(#aw)"/>
+<!-- Bogenfenster -->
+<path d="M150 200 V90 a60 60 0 0 1 120 0 V200 Z" fill="url(#sky)"/>
+<path d="M170 200 C180 160 200 150 230 160 C250 150 262 170 270 166 V200 Z" fill="#7F907B" opacity=".6"/>
+<path d="M150 200 V90 a60 60 0 0 1 120 0 V200 Z" fill="none" stroke="#FFFFFF" stroke-width="8"/>
+<path d="M210 30 V200 M150 120 H270" stroke="#FFFFFF" stroke-width="5"/>
+<polygon points="150,200 270,200 340,300 120,300" fill="url(#sun)"/>
+<!-- Boden -->
+<rect y="236" width="480" height="64" fill="#E2D2C5"/>
+<rect y="234" width="480" height="3" fill="#D6C4B6"/>
+<!-- Behandlungsliege -->
+<ellipse cx="250" cy="282" rx="150" ry="8" fill="#3F3532" opacity=".08"/>
+<rect x="110" y="200" width="270" height="34" rx="12" fill="#FFFFFF"/>
+<rect x="110" y="196" width="270" height="14" rx="7" fill="#F2E2DC"/>
+<rect x="320" y="184" width="52" height="18" rx="9" fill="#FFFFFF" stroke="#EADFD6"/>
+<path d="M150 210 Q200 220 260 210" fill="none" stroke="#DDBDB2" stroke-width="2"/>
+<rect x="140" y="234" width="10" height="44" fill="#B79B6E"/>
+<rect x="340" y="234" width="10" height="44" fill="#B79B6E"/>
+<!-- Beistelltisch mit Pflanze -->
+<rect x="402" y="196" width="56" height="8" rx="3" fill="#B79B6E"/>
+<rect x="426" y="204" width="8" height="74" fill="#B79B6E"/>
+<ellipse cx="430" cy="280" rx="22" ry="4" fill="#B79B6E"/>
+<path d="M414 196 L418 172 H442 L446 196 Z" fill="#FBF8F5" stroke="#E2D6CB"/>
+<path d="M430 172 Q408.0 142.0 406 112" fill="none" stroke="#5F6F5C" stroke-width="1.6" stroke-linecap="round"/>
+<ellipse cx="416.0" cy="161.9" rx="6.4" ry="5.3" transform="rotate(-120 416.0 161.9)" fill="#7F907B" opacity="0.95"/>
+<ellipse cx="426.6" cy="155.7" rx="6.4" ry="5.3" transform="rotate(-120 426.6 155.7)" fill="#A4B1A0" opacity="0.95"/>
+<ellipse cx="410.4" cy="152.3" rx="6.9" ry="5.7" transform="rotate(-116 410.4 152.3)" fill="#7F907B" opacity="0.95"/>
+<ellipse cx="422.2" cy="146.6" rx="6.9" ry="5.7" transform="rotate(-116 422.2 146.6)" fill="#93A38E" opacity="0.95"/>
+<ellipse cx="407.7" cy="141.8" rx="5.1" ry="4.2" transform="rotate(-111 407.7 141.8)" fill="#93A38E" opacity="0.95"/>
+<ellipse cx="416.8" cy="138.4" rx="5.1" ry="4.2" transform="rotate(-111 416.8 138.4)" fill="#7F907B" opacity="0.95"/>
+<ellipse cx="403.1" cy="132.4" rx="6.6" ry="5.4" transform="rotate(-105 403.1 132.4)" fill="#7F907B" opacity="0.95"/>
+<ellipse cx="415.3" cy="129.1" rx="6.6" ry="5.4" transform="rotate(-105 415.3 129.1)" fill="#7F907B" opacity="0.95"/>
+<ellipse cx="403.0" cy="122.1" rx="4.4" ry="3.6" transform="rotate(-100 403.0 122.1)" fill="#A4B1A0" opacity="0.95"/>
+<ellipse cx="411.2" cy="120.7" rx="4.4" ry="3.6" transform="rotate(-100 411.2 120.7)" fill="#7F907B" opacity="0.95"/>
+<ellipse cx="401.9" cy="112.3" rx="4.4" ry="3.6" transform="rotate(-94 401.9 112.3)" fill="#93A38E" opacity="0.95"/>
+<ellipse cx="410.1" cy="111.7" rx="4.4" ry="3.6" transform="rotate(-94 410.1 111.7)" fill="#A4B1A0" opacity="0.95"/>
+<path d="M430 172 Q451.0 146.0 456 120" fill="none" stroke="#5F6F5C" stroke-width="1.6" stroke-linecap="round"/>
+<ellipse cx="434.0" cy="157.5" rx="5.7" ry="4.7" transform="rotate(-56 434.0 157.5)" fill="#93A38E" opacity="0.95"/>
+<ellipse cx="443.0" cy="163.6" rx="5.7" ry="4.7" transform="rotate(-56 443.0 163.6)" fill="#7F907B" opacity="0.95"/>
+<ellipse cx="437.2" cy="148.8" rx="7.7" ry="6.3" transform="rotate(-60 437.2 148.8)" fill="#93A38E" opacity="0.95"/>
+<ellipse cx="449.9" cy="156.1" rx="7.7" ry="6.3" transform="rotate(-60 449.9 156.1)" fill="#93A38E" opacity="0.95"/>
+<ellipse cx="442.4" cy="141.7" rx="6.3" ry="5.2" transform="rotate(-64 442.4 141.7)" fill="#7F907B" opacity="0.95"/>
+<ellipse cx="453.2" cy="146.9" rx="6.3" ry="5.2" transform="rotate(-64 453.2 146.9)" fill="#93A38E" opacity="0.95"/>
+<ellipse cx="446.1" cy="134.2" rx="5.9" ry="4.8" transform="rotate(-69 446.1 134.2)" fill="#7F907B" opacity="0.95"/>
+<ellipse cx="456.5" cy="138.2" rx="5.9" ry="4.8" transform="rotate(-69 456.5 138.2)" fill="#7F907B" opacity="0.95"/>
+<ellipse cx="450.1" cy="127.0" rx="4.3" ry="3.5" transform="rotate(-74 450.1 127.0)" fill="#7F907B" opacity="0.95"/>
+<ellipse cx="458.0" cy="129.3" rx="4.3" ry="3.5" transform="rotate(-74 458.0 129.3)" fill="#A4B1A0" opacity="0.95"/>
+<ellipse cx="451.6" cy="119.2" rx="4.7" ry="3.9" transform="rotate(-79 451.6 119.2)" fill="#93A38E" opacity="0.95"/>
+<ellipse cx="460.4" cy="120.8" rx="4.7" ry="3.9" transform="rotate(-79 460.4 120.8)" fill="#7F907B" opacity="0.95"/>
+<!-- Wandleuchte -->
+<path d="M64 110 v-30" stroke="#B79B6E" stroke-width="2"/>
+<circle cx="64" cy="76" r="5" fill="#B79B6E"/>
+<path d="M44 110 h40 l-6 24 h-28 z" fill="#F2E2DC" stroke="#DDBDB2"/>
+<!-- Regal mit Produkten -->
+<rect x="30" y="170" width="80" height="5" fill="#B79B6E"/>
+<rect x="38" y="148" width="12" height="22" rx="3" fill="#C58F79"/>
+<rect x="41" y="140" width="6" height="9" rx="1" fill="#3F3532"/>
+<rect x="56" y="154" width="22" height="16" rx="3" fill="#FBF8F5" stroke="#E2D6CB"/>
+<rect x="56" y="150" width="22" height="6" rx="2" fill="#B79B6E"/>
+<rect x="84" y="142" width="14" height="28" rx="5" fill="#A4B1A0"/>
+</svg>

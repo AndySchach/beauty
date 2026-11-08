@@ -51,8 +51,7 @@
 
     <!-- ============================================================
          1. HERO
-         Rechts: ein Bogen mit drei Farbschichten – angelehnt an die
-         Hautschichten. Reines CSS, keine Bilder.
+         Rechts: ein Bogen mit einer Stillleben-Illustration (images/hero.svg).
          ============================================================ -->
     <section class="hero" id="top">
       <div class="container hero-grid">
@@ -69,11 +68,10 @@
           <p class="hero-note">Das erste Hautgespräch ist kostenfrei und unverbindlich.</p>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
+        <div class="hero-visual">
           <div class="arch">
-            <div class="layer layer-1"><span>Epidermis</span></div>
-            <div class="layer layer-2"><span>Dermis</span></div>
-            <div class="layer layer-3"><span>Subkutis</span></div>
+            <img src="images/hero.svg" width="300" height="400"
+                 alt="Stillleben mit Eukalyptuszweigen, Pflegeserum, Cremetiegel und Steinen">
           </div>
           <div class="arch-ring"></div>
         </div>
@@ -85,9 +83,10 @@
          ============================================================ -->
     <section class="section about" id="ueber">
       <div class="container about-grid">
-        <div class="portrait" aria-hidden="true">
+        <div class="portrait">
           <div class="portrait-shape">
-            <span class="portrait-initials">BS</span>
+            <img src="images/portrait.svg" width="320" height="400" loading="lazy"
+                 alt="Illustration einer Fachkosmetikerin">
           </div>
           <p class="portrait-caption">Ihre Fachkosmetikerin im Beispielstudio</p>
         </div>
@@ -127,7 +126,7 @@
 
     <!-- ============================================================
          3. LEISTUNGEN
-         Sechs Karten mit Dauer und Preis. Jedes Motiv ist eine CSS-Form.
+         Sechs Karten mit Dauer und Preis, jeweils mit einer Illustration.
          ============================================================ -->
     <section class="section services" id="leistungen">
       <div class="container">
@@ -143,7 +142,7 @@
         <div class="service-grid">
 
           <article class="service-card">
-            <div class="motif motif-circle" aria-hidden="true"></div>
+            <img class="service-img" src="images/leistung-analyse.svg" width="320" height="200" loading="lazy" alt="">
             <h3>Hautanalyse &amp; Beratung</h3>
             <p>
               Wir schauen gemeinsam unter der Lupenlampe auf Ihre Haut,
@@ -154,7 +153,7 @@
           </article>
 
           <article class="service-card">
-            <div class="motif motif-arch" aria-hidden="true"></div>
+            <img class="service-img" src="images/leistung-klassisch.svg" width="320" height="200" loading="lazy" alt="">
             <h3>Klassische Gesichtsbehandlung</h3>
             <p>
               Reinigung, sanftes Peeling, Ausreinigung, Maske und eine
@@ -165,7 +164,7 @@
           </article>
 
           <article class="service-card">
-            <div class="motif motif-drop" aria-hidden="true"></div>
+            <img class="service-img" src="images/leistung-aquafacial.svg" width="320" height="200" loading="lazy" alt="">
             <h3>Aquafacial Tiefenreinigung</h3>
             <p>
               Porentiefe Reinigung mit Wasser und Unterdruck, gefolgt von
@@ -176,7 +175,7 @@
           </article>
 
           <article class="service-card">
-            <div class="motif motif-dots" aria-hidden="true"></div>
+            <img class="service-img" src="images/leistung-microneedling.svg" width="320" height="200" loading="lazy" alt="">
             <h3>Microneedling</h3>
             <p>
               Regt die hauteigene Kollagenbildung an und kann feine Linien,
@@ -187,7 +186,7 @@
           </article>
 
           <article class="service-card">
-            <div class="motif motif-waves" aria-hidden="true"></div>
+            <img class="service-img" src="images/leistung-kobido.svg" width="320" height="200" loading="lazy" alt="">
             <h3>Kobido-Gesichtsmassage</h3>
             <p>
               Die traditionelle japanische Massage löst Spannung in Kiefer
@@ -198,7 +197,7 @@
           </article>
 
           <article class="service-card">
-            <div class="motif motif-line" aria-hidden="true"></div>
+            <img class="service-img" src="images/leistung-brauen.svg" width="320" height="200" loading="lazy" alt="">
             <h3>Augenbrauen &amp; Wimpern</h3>
             <p>
               Formen, Färben oder ein natürliches Lifting – abgestimmt auf
@@ -343,6 +342,11 @@
               <p>Dienstag bis Freitag 9–18 Uhr<br>Samstag 9–14 Uhr<br>Termine nur nach Vereinbarung</p>
             </div>
           </address>
+
+          <figure class="atelier">
+            <img src="images/atelier.svg" width="480" height="300" loading="lazy"
+                 alt="Behandlungsraum mit Bogenfenster, Liege und Pflanze">
+          </figure>
         </div>
 
         <form class="contact-form" action="https://formspree.io/f/DEINE-FORM-ID" method="POST">
