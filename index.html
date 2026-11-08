@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mara Lenz Hautatelier – Ganzheitliche Hautpflege in Freiburg</title>
+  <meta name="description" content="Ganzheitliche Gesichtsbehandlungen, Hautanalyse und Microneedling in Freiburg. Ruhige Atmosphäre, ehrliche Beratung, Pflege, die zu Ihrer Haut passt.">
+
+  <!-- Schriften: Bodoni Moda (Überschriften) + Jost (Fließtext) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M20 95V45a30 30 0 0 1 60 0v50z' fill='%238A9A86'/></svg>">
+</head>
+<body>
+
+  <!-- Sprunglink für Tastatur- und Screenreader-Nutzer -->
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <!-- ============================================================
+       HEADER & NAVIGATION
+       Mobile Navigation funktioniert ohne JavaScript (Checkbox-Toggle)
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="Mara Lenz Hautatelier, zur Startseite">
+        <span class="logo-name">Mara Lenz</span>
+        <span class="logo-sub">Hautatelier</span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menü öffnen oder schließen">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span><span></span>
+      </label>
+
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="#ueber">Über mich</a></li>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#ablauf">Ablauf</a></li>
+          <li><a href="#stimmen">Stimmen</a></li>
+          <li><a href="#kontakt" class="nav-cta">Termin vereinbaren</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         1. HERO
+         Rechts: ein Bogen mit drei Farbschichten – angelehnt an die
+         Hautschichten. Reines CSS, keine Bilder.
+         ============================================================ -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Haut, die sich wieder wohlfühlt.</h1>
+          <p class="hero-lead">
+            Ganzheitliche Hautpflege in Freiburg – mit Zeit, ruhigen Händen
+            und Behandlungen, die zu Ihrer Haut passen statt zu einem Trend.
+          </p>
+          <div class="hero-actions">
+            <a href="#kontakt" class="btn btn-primary">Termin vereinbaren</a>
+            <a href="#leistungen" class="btn btn-ghost">Leistungen ansehen</a>
+          </div>
+          <p class="hero-note">Das erste Hautgespräch ist kostenfrei und unverbindlich.</p>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="arch">
+            <div class="layer layer-1"><span>Epidermis</span></div>
+            <div class="layer layer-2"><span>Dermis</span></div>
+            <div class="layer layer-3"><span>Subkutis</span></div>
+          </div>
+          <div class="arch-ring"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. ÜBER MICH
+         ============================================================ -->
+    <section class="section about" id="ueber">
+      <div class="container about-grid">
+        <div class="portrait" aria-hidden="true">
+          <div class="portrait-shape">
+            <span class="portrait-initials">ML</span>
+          </div>
+          <p class="portrait-caption">Mara Lenz, Fachkosmetikerin</p>
+        </div>
+
+        <div class="about-text">
+          <h2>Ich nehme mir Zeit für Ihre Haut – und für Sie.</h2>
+          <p>
+            Seit 2012 arbeite ich als Kosmetikerin, die letzten Jahre mit einer
+            Weiterbildung in Dermokosmetik. In dieser Zeit habe ich vor allem eines
+            gelernt: Gute Haut entsteht selten durch das eine Wundermittel, sondern
+            durch Verständnis, Geduld und die richtige Pflege zu Hause.
+          </p>
+          <p>
+            In meinem kleinen Atelier in der Freiburger Altstadt gibt es keinen
+            Zeitdruck und keine Verkaufsgespräche. Ich behandle maximal fünf
+            Menschen am Tag, arbeite mit zertifizierter Naturkosmetik und sage
+            Ihnen ehrlich, was Ihre Haut braucht – und was nicht.
+          </p>
+
+          <dl class="facts">
+            <div>
+              <dt>14 Jahre</dt>
+              <dd>Erfahrung in Kosmetik und Hautpflege</dd>
+            </div>
+            <div>
+              <dt>5 Termine</dt>
+              <dd>höchstens am Tag, damit für jeden Zeit bleibt</dd>
+            </div>
+            <div>
+              <dt>Naturkosmetik</dt>
+              <dd>zertifiziert, duftstoffarm, in Deutschland hergestellt</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. LEISTUNGEN
+         Sechs Karten mit Dauer und Preis. Jedes Motiv ist eine CSS-Form.
+         ============================================================ -->
+    <section class="section services" id="leistungen">
+      <div class="container">
+        <header class="section-head">
+          <h2>Behandlungen</h2>
+          <p>
+            Jede Behandlung beginnt mit einem kurzen Blick auf Ihre Haut.
+            So passe ich Produkte und Intensität an das an, was heute
+            gut für Sie ist.
+          </p>
+        </header>
+
+        <div class="service-grid">
+
+          <article class="service-card">
+            <div class="motif motif-circle" aria-hidden="true"></div>
+            <h3>Hautanalyse &amp; Beratung</h3>
+            <p>
+              Wir schauen gemeinsam unter der Lupenlampe auf Ihre Haut,
+              sprechen über Ihre Routine und erstellen einen Pflegeplan,
+              den Sie wirklich umsetzen können.
+            </p>
+            <p class="service-meta"><span>45 Min.</span><span>45 €</span></p>
+          </article>
+
+          <article class="service-card">
+            <div class="motif motif-arch" aria-hidden="true"></div>
+            <h3>Klassische Gesichtsbehandlung</h3>
+            <p>
+              Reinigung, sanftes Peeling, Ausreinigung, Maske und eine
+              ausgiebige Massage. Der Klassiker – für Haut, die einfach
+              wieder klar und ruhig sein soll.
+            </p>
+            <p class="service-meta"><span>75 Min.</span><span>89 €</span></p>
+          </article>
+
+          <article class="service-card">
+            <div class="motif motif-drop" aria-hidden="true"></div>
+            <h3>Aquafacial Tiefenreinigung</h3>
+            <p>
+              Porentiefe Reinigung mit Wasser und Unterdruck, gefolgt von
+              einem feuchtigkeitsspendenden Serum. Ideal vor besonderen
+              Anlässen oder bei fahler Haut.
+            </p>
+            <p class="service-meta"><span>60 Min.</span><span>95 €</span></p>
+          </article>
+
+          <article class="service-card">
+            <div class="motif motif-dots" aria-hidden="true"></div>
+            <h3>Microneedling</h3>
+            <p>
+              Regt die hauteigene Kollagenbildung an und kann feine Linien,
+              Aknenarben und vergrößerte Poren sichtbar mildern. Empfohlen
+              als Kur mit drei bis vier Terminen.
+            </p>
+            <p class="service-meta"><span>60 Min.</span><span>149 €</span></p>
+          </article>
+
+          <article class="service-card">
+            <div class="motif motif-waves" aria-hidden="true"></div>
+            <h3>Kobido-Gesichtsmassage</h3>
+            <p>
+              Die traditionelle japanische Massage löst Spannung in Kiefer
+              und Stirn, fördert die Durchblutung und schenkt dem Gesicht
+              spürbar mehr Frische.
+            </p>
+            <p class="service-meta"><span>60 Min.</span><span>85 €</span></p>
+          </article>
+
+          <article class="service-card">
+            <div class="motif motif-line" aria-hidden="true"></div>
+            <h3>Augenbrauen &amp; Wimpern</h3>
+            <p>
+              Formen, Färben oder ein natürliches Lifting – abgestimmt auf
+              Ihre Gesichtszüge, damit das Ergebnis aussieht wie Sie an
+              einem besonders guten Tag.
+            </p>
+            <p class="service-meta"><span>30 Min.</span><span>ab 29 €</span></p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. ABLAUF (echte Reihenfolge → Nummerierung sinnvoll)
+         ============================================================ -->
+    <section class="section process" id="ablauf">
+      <div class="container">
+        <header class="section-head">
+          <h2>So läuft Ihr erster Besuch ab</h2>
+          <p>Vom ersten Kontakt bis zur Pflege zu Hause – ohne Überraschungen.</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Termin anfragen</h3>
+            <p>
+              Schreiben Sie mir über das Formular oder rufen Sie an. Ich melde
+              mich innerhalb eines Werktags mit zwei, drei Terminvorschlägen.
+            </p>
+          </li>
+          <li class="step">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Hautgespräch</h3>
+            <p>
+              Vor der ersten Behandlung sprechen wir über Ihre Haut, mögliche
+              Unverträglichkeiten und Ihre Wünsche. Erst dann entscheiden wir,
+              welche Behandlung passt.
+            </p>
+          </li>
+          <li class="step">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Behandlung &amp; Pflegeplan</h3>
+            <p>
+              Sie lehnen sich zurück, ich übernehme. Zum Abschluss bekommen Sie
+              einen schriftlichen Pflegeplan mit nach Hause – auch mit Produkten,
+              die Sie bereits besitzen.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. KUNDENSTIMMEN
+         ============================================================ -->
+    <section class="section testimonials" id="stimmen">
+      <div class="container">
+        <header class="section-head">
+          <h2>Was Kundinnen und Kunden sagen</h2>
+        </header>
+
+        <div class="quote-grid">
+          <figure class="quote">
+            <blockquote>
+              <p>
+                Ich war jahrelang unzufrieden mit meiner unreinen Haut und hatte
+                schon viel ausprobiert. Mara hat mir als Erste erklärt, warum meine
+                Pflege eher geschadet hat. Nach drei Monaten erkenne ich mich
+                kaum wieder.
+              </p>
+            </blockquote>
+            <figcaption>
+              <span class="quote-name">Lena K.</span>
+              <span class="quote-detail">Kundin seit 2023</span>
+            </figcaption>
+          </figure>
+
+          <figure class="quote">
+            <blockquote>
+              <p>
+                Die Kobido-Massage ist mein fester Termin im Monat. Ich komme
+                gestresst rein und gehe mit einem völlig entspannten Gesicht
+                wieder raus. Das Atelier ist unglaublich ruhig.
+              </p>
+            </blockquote>
+            <figcaption>
+              <span class="quote-name">Sabine W.</span>
+              <span class="quote-detail">Kundin seit 2021</span>
+            </figcaption>
+          </figure>
+
+          <figure class="quote">
+            <blockquote>
+              <p>
+                Als Mann war ich anfangs skeptisch. Die Beratung war aber völlig
+                unkompliziert und ehrlich – keine Produktliste, die ich kaufen
+                musste, sondern drei klare Tipps, die tatsächlich helfen.
+              </p>
+            </blockquote>
+            <figcaption>
+              <span class="quote-name">Jonas M.</span>
+              <span class="quote-detail">Kunde seit 2024</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. KONTAKT & TERMIN
+         Hinweis: Statische Seiten auf Vercel haben kein eigenes Backend.
+         Ersetzen Sie "DEINE-FORM-ID" durch Ihre ID bei einem Formular-
+         dienst wie Formspree (formspree.io) oder Getform – dann werden
+         Anfragen direkt per E-Mail zugestellt.
+         ============================================================ -->
+    <section class="section contact" id="kontakt">
+      <div class="container contact-grid">
+
+        <div class="contact-info">
+          <h2>Termin anfragen</h2>
+          <p class="contact-lead">
+            Erzählen Sie mir kurz, was Sie sich wünschen. Ich melde mich
+            innerhalb eines Werktags persönlich bei Ihnen.
+          </p>
+
+          <address class="contact-details">
+            <div>
+              <h3>Atelier</h3>
+              <p>Mara Lenz Hautatelier<br>Konviktstraße 18<br>79098 Freiburg im Breisgau</p>
+            </div>
+            <div>
+              <h3>Telefon &amp; E-Mail</h3>
+              <p>
+                <a href="tel:+497611234567">0761 123 45 67</a><br>
+                <a href="mailto:hallo@mara-lenz.de">hallo@mara-lenz.de</a>
+              </p>
+            </div>
+            <div>
+              <h3>Öffnungszeiten</h3>
+              <p>Dienstag bis Freitag 9–18 Uhr<br>Samstag 9–14 Uhr<br>Termine nur nach Vereinbarung</p>
+            </div>
+          </address>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/DEINE-FORM-ID" method="POST">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="email">E-Mail</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="phone">Telefon <span class="optional">(optional)</span></label>
+              <input type="tel" id="phone" name="telefon" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="treatment">Wunschbehandlung</label>
+            <select id="treatment" name="behandlung">
+              <option value="Noch unsicher">Ich bin noch unsicher</option>
+              <option>Hautanalyse &amp; Beratung</option>
+              <option>Klassische Gesichtsbehandlung</option>
+              <option>Aquafacial Tiefenreinigung</option>
+              <option>Microneedling</option>
+              <option>Kobido-Gesichtsmassage</option>
+              <option>Augenbrauen &amp; Wimpern</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Ihre Nachricht</label>
+            <textarea id="message" name="nachricht" rows="5" placeholder="Zum Beispiel: Wunschtage, Hautthemen oder Fragen"></textarea>
+          </div>
+
+          <div class="field-check">
+            <input type="checkbox" id="privacy" name="datenschutz" required>
+            <label for="privacy">
+              Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage
+              gespeichert werden. Mehr in der <a href="#datenschutz">Datenschutzerklärung</a>.
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Anfrage senden</button>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       7. FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-name">Mara Lenz</span>
+        <span class="logo-sub">Hautatelier</span>
+        <p>Ganzheitliche Hautpflege in der Freiburger Altstadt.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Rechtliches">
+        <a href="#impressum" id="impressum">Impressum</a>
+        <a href="#datenschutz" id="datenschutz">Datenschutz</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <p class="footer-copy">© 2026 Mara Lenz Hautatelier</p>
+    </div>
+  </footer>
+
+</body>
+</html>

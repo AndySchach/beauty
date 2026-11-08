@@ -1,0 +1,1005 @@
+/* ==================================================================
+   Mara Lenz Hautatelier – Stylesheet
+   Aufbau:
+   1. Design-Tokens (Farben, Schriften, Abstände)
+   2. Reset & Grundlagen
+   3. Layout-Helfer & Buttons
+   4. Header & Navigation
+   5. Hero
+   6. Über mich
+   7. Leistungen
+   8. Ablauf
+   9. Kundenstimmen
+   10. Kontakt & Formular
+   11. Footer
+   12. Breakpoints (Tablet / Desktop)
+   13. Barrierefreiheit & reduzierte Bewegung
+   ================================================================== */
+
+
+/* ------------------------------------------------------------------
+   1. DESIGN-TOKENS
+   ------------------------------------------------------------------ */
+:root {
+  /* Farbpalette – sanft, natürlich, hautnah */
+  --c-porzellan: #FBF8F5;   /* Seitenhintergrund */
+  --c-hafer:     #EFE6DC;   /* Flächen, Karten-Hintergründe */
+  --c-rose:      #DDBDB2;   /* Soft Rose – warme Akzentflächen */
+  --c-rose-hell: #F2E2DC;
+  --c-salbei:    #7F907B;   /* Hauptakzent: Buttons, Links */
+  --c-salbei-dk: #5F6F5C;   /* Hover / gut lesbarer Kontrast */
+  --c-gold:      #B79B6E;   /* sehr dezent: feine Linien */
+  --c-taupe:     #8C7B72;   /* Sekundärtext */
+  --c-tinte:     #3F3532;   /* Haupttext – warmes Dunkelbraun */
+  --c-weiss:     #FFFFFF;
+
+  /* Typografie */
+  --f-serif: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, "Times New Roman", serif;
+  --f-sans:  "Jost", "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Typo-Skala (fließend zwischen Mobil und Desktop) */
+  --fs-small: 0.875rem;
+  --fs-base:  1.0625rem;
+  --fs-lead:  clamp(1.125rem, 1rem + 0.5vw, 1.3125rem);
+  --fs-h3:    clamp(1.3rem, 1.15rem + 0.5vw, 1.5rem);
+  --fs-h2:    clamp(2rem, 1.5rem + 2vw, 3rem);
+  --fs-h1:    clamp(2.75rem, 1.8rem + 4.5vw, 5.25rem);
+
+  /* Abstände */
+  --space-xs: 0.5rem;
+  --space-s:  1rem;
+  --space-m:  1.5rem;
+  --space-l:  2.5rem;
+  --space-xl: clamp(4.5rem, 3rem + 6vw, 8.5rem); /* Abstand zwischen Sektionen */
+
+  --container: 72rem;
+  --radius-s: 6px;
+  --radius-arch: 999px 999px 0 0; /* Bogenform, wiederkehrendes Motiv */
+}
+
+
+/* ------------------------------------------------------------------
+   2. RESET & GRUNDLAGEN
+   ------------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;      /* Smooth-Scroll ohne JavaScript */
+  scroll-padding-top: 5rem;     /* Platz für den fixierten Header */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--c-porzellan);
+  color: var(--c-tinte);
+  font-family: var(--f-sans);
+  font-size: var(--fs-base);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--f-serif);
+  font-weight: 400;
+  line-height: 1.12;
+  margin: 0 0 var(--space-s);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); line-height: 1.25; }
+
+p {
+  margin: 0 0 var(--space-s);
+  max-width: 62ch;              /* angenehme Zeilenlänge */
+}
+
+a {
+  color: var(--c-salbei-dk);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover { color: var(--c-tinte); }
+
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+address { font-style: normal; }
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--c-tinte);
+  color: var(--c-weiss);
+  border-radius: var(--radius-s);
+}
+
+.skip-link:focus { top: 1rem; }
+
+
+/* ------------------------------------------------------------------
+   3. LAYOUT-HELFER & BUTTONS
+   ------------------------------------------------------------------ */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 1.375rem;
+}
+
+.section {
+  padding-block: var(--space-xl);
+}
+
+.section-head {
+  margin-bottom: var(--space-l);
+  max-width: 40rem;
+}
+
+.section-head p {
+  color: var(--c-taupe);
+  font-size: var(--fs-lead);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.95rem 1.75rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: var(--f-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--c-salbei-dk);
+  color: var(--c-weiss);
+}
+
+.btn-primary:hover {
+  background: var(--c-tinte);
+  color: var(--c-weiss);
+}
+
+.btn-ghost {
+  border-color: var(--c-taupe);
+  color: var(--c-tinte);
+}
+
+.btn-ghost:hover {
+  border-color: var(--c-tinte);
+  background: var(--c-tinte);
+  color: var(--c-weiss);
+}
+
+.btn-block { width: 100%; }
+
+
+/* ------------------------------------------------------------------
+   4. HEADER & NAVIGATION
+   ------------------------------------------------------------------ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(251, 248, 245, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(183, 155, 110, 0.25);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 4.5rem;
+}
+
+/* Logo: Name in Serif, Zusatz in Sans */
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  text-decoration: none;
+  color: var(--c-tinte);
+}
+
+.logo-name {
+  font-family: var(--f-serif);
+  font-size: 1.45rem;
+}
+
+.logo-sub {
+  font-size: 0.8rem;
+  color: var(--c-taupe);
+  letter-spacing: 0.08em;
+}
+
+/* Checkbox-Toggle – Checkbox selbst bleibt unsichtbar, aber fokussierbar */
+.nav-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.nav-toggle-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  width: 2.75rem;
+  height: 2.75rem;
+  cursor: pointer;
+}
+
+.nav-toggle-label span {
+  display: block;
+  width: 26px;
+  height: 1.5px;
+  margin-left: auto;
+  background: var(--c-tinte);
+  transition: transform 0.3s ease;
+}
+
+.nav-toggle:checked + .nav-toggle-label span:first-child {
+  transform: translateY(4.25px) rotate(45deg);
+}
+
+.nav-toggle:checked + .nav-toggle-label span:last-child {
+  transform: translateY(-4.25px) rotate(-45deg);
+}
+
+.nav-toggle:focus-visible + .nav-toggle-label {
+  outline: 2px solid var(--c-salbei-dk);
+  outline-offset: 4px;
+  border-radius: var(--radius-s);
+}
+
+/* Mobile: Navigation klappt unter dem Header auf */
+.main-nav {
+  flex-basis: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.nav-toggle:checked ~ .main-nav {
+  max-height: 24rem;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem 0 1.5rem;
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.6rem 0;
+  color: var(--c-tinte);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.main-nav a:hover { color: var(--c-salbei-dk); }
+
+.main-nav .nav-cta {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background: var(--c-salbei-dk);
+  color: var(--c-weiss);
+  text-align: center;
+}
+
+.main-nav .nav-cta:hover {
+  background: var(--c-tinte);
+  color: var(--c-weiss);
+}
+
+
+/* ------------------------------------------------------------------
+   5. HERO
+   ------------------------------------------------------------------ */
+.hero {
+  padding-block: 3rem 4.5rem;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero h1 {
+  max-width: 11ch;
+  margin-bottom: var(--space-m);
+}
+
+.hero-lead {
+  font-size: var(--fs-lead);
+  color: var(--c-taupe);
+  max-width: 34rem;
+  margin-bottom: var(--space-l);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: var(--space-m);
+}
+
+.hero-note {
+  font-size: var(--fs-small);
+  color: var(--c-taupe);
+}
+
+/* Der Bogen mit den drei "Hautschichten" – das Signaturelement */
+.hero-visual {
+  position: relative;
+  isolation: isolate; /* hält die goldene Kontur hinter dem Bogen */
+  width: min(100%, 22rem);
+  margin-inline: auto;
+}
+
+.arch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-arch);
+  overflow: hidden;
+  background: var(--c-hafer);
+}
+
+.layer {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 1.25rem 0.9rem;
+  /* Startzustand für die einmalige Lade-Animation */
+  animation: settle 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.layer span {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: rgba(63, 53, 50, 0.7);
+}
+
+.layer-1 {
+  flex: 1.5;
+  background: linear-gradient(180deg, #FBF1EC 0%, var(--c-rose-hell) 100%);
+  animation-delay: 0.1s;
+}
+
+.layer-2 {
+  flex: 1.1;
+  background: linear-gradient(180deg, #E8CCC2 0%, var(--c-rose) 100%);
+  animation-delay: 0.3s;
+}
+
+.layer-3 {
+  flex: 0.9;
+  background: linear-gradient(180deg, #C8B3A3 0%, #A8968A 100%);
+  animation-delay: 0.5s;
+}
+
+.layer-3 span { color: rgba(255, 255, 255, 0.85); }
+
+/* Feine goldene Kontur, leicht versetzt hinter dem Bogen */
+.arch-ring {
+  position: absolute;
+  inset: -0.9rem 0.9rem 0.9rem -0.9rem;
+  border: 1px solid var(--c-gold);
+  border-radius: var(--radius-arch);
+  z-index: -1;
+  opacity: 0.6;
+}
+
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ------------------------------------------------------------------
+   6. ÜBER MICH
+   ------------------------------------------------------------------ */
+.about {
+  background: var(--c-weiss);
+}
+
+.about-grid {
+  display: grid;
+  gap: 3rem;
+}
+
+/* Platzhalter-Porträt: Bogen in Salbei mit Initialen */
+.portrait {
+  max-width: 18rem;
+}
+
+.portrait-shape {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-arch);
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.35) 0 22%, transparent 23%),
+    linear-gradient(170deg, #A4B1A0 0%, var(--c-salbei) 100%);
+}
+
+.portrait-initials {
+  font-family: var(--f-serif);
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.portrait-caption {
+  margin-top: 0.85rem;
+  font-size: var(--fs-small);
+  color: var(--c-taupe);
+}
+
+.about-text h2 {
+  max-width: 18ch;
+  margin-bottom: var(--space-m);
+}
+
+.facts {
+  display: grid;
+  gap: 1.25rem;
+  margin: var(--space-l) 0 0;
+  padding-top: var(--space-m);
+  border-top: 1px solid rgba(183, 155, 110, 0.4);
+}
+
+.facts dt {
+  font-family: var(--f-serif);
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.facts dd {
+  margin: 0.15rem 0 0;
+  font-size: var(--fs-small);
+  color: var(--c-taupe);
+}
+
+
+/* ------------------------------------------------------------------
+   7. LEISTUNGEN
+   ------------------------------------------------------------------ */
+.service-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.75rem 1.5rem;
+  background: var(--c-weiss);
+  border: 1px solid rgba(183, 155, 110, 0.3);
+  border-radius: var(--radius-s);
+  transition: border-color 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--c-gold);
+}
+
+.service-card p {
+  color: var(--c-taupe);
+  font-size: 0.98rem;
+}
+
+/* Dauer & Preis stehen unten, durch eine feine Linie getrennt */
+.service-card .service-meta {
+  display: flex;
+  justify-content: space-between;
+  margin: auto 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--c-hafer);
+  font-size: var(--fs-small);
+  color: var(--c-tinte);
+}
+
+.service-meta span:last-child {
+  font-family: var(--f-serif);
+  font-size: 1.1rem;
+}
+
+/* Motive: kleine CSS-Formen statt Icons */
+.motif {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.motif-circle {
+  border-radius: 50%;
+  background: var(--c-rose-hell);
+  box-shadow: inset 0 0 0 1px var(--c-rose);
+}
+
+.motif-circle::after {
+  content: "";
+  position: absolute;
+  inset: 30%;
+  border-radius: 50%;
+  border: 1px solid var(--c-salbei);
+}
+
+.motif-arch {
+  width: 2.4rem;
+  border-radius: var(--radius-arch);
+  background: linear-gradient(180deg, var(--c-rose-hell), var(--c-rose));
+}
+
+.motif-drop {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(45deg);
+  background: linear-gradient(135deg, #DCE4D9, #A4B1A0);
+}
+
+.motif-dots {
+  background-image: radial-gradient(circle, var(--c-salbei) 1.6px, transparent 2px);
+  background-size: 0.75rem 0.75rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--c-hafer);
+}
+
+.motif-waves {
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(circle at 50% 120%,
+      transparent 0 5px,
+      var(--c-rose) 5px 6px);
+  box-shadow: inset 0 0 0 1px var(--c-rose);
+}
+
+.motif-line {
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--c-hafer);
+}
+
+.motif-line::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  top: 46%;
+  height: 0.55rem;
+  border-top: 1.5px solid var(--c-tinte);
+  border-radius: 50% 50% 0 0;
+}
+
+
+/* ------------------------------------------------------------------
+   8. ABLAUF
+   ------------------------------------------------------------------ */
+.process {
+  background: var(--c-hafer);
+}
+
+.steps {
+  display: grid;
+  gap: 2.5rem;
+  counter-reset: none;
+}
+
+.step {
+  position: relative;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(63, 53, 50, 0.18);
+}
+
+/* Große, ruhige Ziffer in Serif */
+.step-number {
+  display: block;
+  font-family: var(--f-serif);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--c-salbei-dk);
+  margin-bottom: 1rem;
+}
+
+.step p {
+  color: #6E5F58;
+}
+
+
+/* ------------------------------------------------------------------
+   9. KUNDENSTIMMEN
+   ------------------------------------------------------------------ */
+.quote-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.quote {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 3rem 1.75rem 1.75rem;
+  background: var(--c-rose-hell);
+  border-radius: var(--radius-s);
+}
+
+/* Dekoratives Anführungszeichen */
+.quote::before {
+  content: "„";
+  position: absolute;
+  top: 0.4rem;
+  left: 1.5rem;
+  font-family: var(--f-serif);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--c-rose);
+}
+
+.quote blockquote {
+  margin: 0 0 1.5rem;
+}
+
+.quote blockquote p {
+  font-family: var(--f-serif);
+  font-size: 1.12rem;
+  line-height: 1.6;
+}
+
+.quote figcaption {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-name {
+  font-weight: 500;
+}
+
+.quote-detail {
+  font-size: var(--fs-small);
+  color: var(--c-taupe);
+}
+
+
+/* ------------------------------------------------------------------
+   10. KONTAKT & FORMULAR
+   ------------------------------------------------------------------ */
+.contact {
+  background: var(--c-weiss);
+}
+
+.contact-grid {
+  display: grid;
+  gap: 3rem;
+}
+
+.contact-lead {
+  font-size: var(--fs-lead);
+  color: var(--c-taupe);
+  margin-bottom: var(--space-l);
+}
+
+.contact-details {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-details h3 {
+  font-family: var(--f-sans);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--c-taupe);
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.02em;
+}
+
+.contact-details p { margin: 0; }
+
+.contact-form {
+  display: grid;
+  gap: 1.25rem;
+  padding: 2rem 1.5rem;
+  background: var(--c-porzellan);
+  border: 1px solid rgba(183, 155, 110, 0.3);
+  border-radius: var(--radius-s);
+}
+
+.field-row {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: var(--fs-small);
+  font-weight: 400;
+}
+
+.optional { color: var(--c-taupe); }
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--c-tinte);
+  background: var(--c-weiss);
+  border: 1px solid #D9CEC3;
+  border-radius: var(--radius-s);
+  transition: border-color 0.2s ease;
+}
+
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  /* eigener Pfeil als CSS-Verlauf */
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--c-taupe) 50%),
+    linear-gradient(135deg, var(--c-taupe) 50%, transparent 50%);
+  background-position: calc(100% - 1.3rem) 55%, calc(100% - 0.95rem) 55%;
+  background-size: 0.35rem 0.35rem;
+  background-repeat: no-repeat;
+  padding-right: 2.5rem;
+}
+
+.field textarea { resize: vertical; min-height: 8rem; }
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--c-salbei-dk);
+  box-shadow: 0 0 0 3px rgba(127, 144, 123, 0.2);
+}
+
+.field-check {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  font-size: var(--fs-small);
+  color: var(--c-taupe);
+  line-height: 1.55;
+}
+
+.field-check input {
+  flex-shrink: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.2rem;
+  accent-color: var(--c-salbei-dk);
+}
+
+
+/* ------------------------------------------------------------------
+   11. FOOTER
+   ------------------------------------------------------------------ */
+.site-footer {
+  padding-block: 3.5rem 2.5rem;
+  background: var(--c-tinte);
+  color: #E7DDD4;
+}
+
+.footer-inner {
+  display: grid;
+  gap: 2rem;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand .logo-sub { color: #BFAFA4; }
+
+.footer-brand p {
+  margin-top: 0.75rem;
+  font-size: var(--fs-small);
+  color: #BFAFA4;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-nav a {
+  color: #E7DDD4;
+  text-decoration: none;
+  font-size: var(--fs-small);
+}
+
+.footer-nav a:hover {
+  color: var(--c-weiss);
+  text-decoration: underline;
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #A3938A;
+}
+
+
+/* ------------------------------------------------------------------
+   12. BREAKPOINTS
+   ------------------------------------------------------------------ */
+
+/* Tablet ab 720px */
+@media (min-width: 45em) {
+  .container { padding-inline: 2.5rem; }
+
+  .service-grid,
+  .quote-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .field-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .facts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact-form { padding: 2.5rem; }
+
+  .footer-inner {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+
+  .footer-copy { grid-column: 1 / -1; }
+}
+
+/* Desktop ab 1024px */
+@media (min-width: 64em) {
+
+  /* Navigation wird horizontal, Burger verschwindet */
+  .nav-toggle-label { display: none; }
+
+  .header-inner { flex-wrap: nowrap; }
+
+  .main-nav {
+    flex-basis: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .main-nav ul {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+  }
+
+  .main-nav a { font-size: 0.95rem; padding: 0.25rem 0; }
+
+  .main-nav .nav-cta {
+    margin-top: 0;
+    padding: 0.65rem 1.3rem;
+  }
+
+  /* Hero zweispaltig */
+  .hero { padding-block: 5rem 7rem; }
+
+  .hero-grid {
+    grid-template-columns: 1.25fr 1fr;
+    gap: 4rem;
+  }
+
+  .hero-visual {
+    width: min(100%, 26rem);
+    margin-right: 0;
+  }
+
+  /* Über mich: Porträt links, Text rechts */
+  .about-grid {
+    grid-template-columns: 5fr 7fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .portrait {
+    max-width: none;
+    position: sticky;
+    top: 7rem;
+  }
+
+  /* Leistungen dreispaltig */
+  .service-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Ablauf dreispaltig */
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  /* Stimmen: mittlere Karte leicht versetzt für mehr Rhythmus */
+  .quote-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .quote:nth-child(2) { margin-top: 3rem; }
+
+  /* Kontakt zweispaltig */
+  .contact-grid {
+    grid-template-columns: 5fr 6fr;
+    gap: 5rem;
+    align-items: start;
+  }
+}
+
+
+/* ------------------------------------------------------------------
+   13. BARRIEREFREIHEIT & REDUZIERTE BEWEGUNG
+   ------------------------------------------------------------------ */
+a:focus-visible,
+.btn:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--c-salbei-dk);
+  outline-offset: 3px;
+}
+
+.field-check input:focus-visible {
+  outline: 2px solid var(--c-salbei-dk);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
