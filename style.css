@@ -355,7 +355,7 @@ address { font-style: normal; }
   color: var(--c-taupe);
 }
 
-/* Der Bogen mit den drei "Hautschichten" – das Signaturelement */
+/* Der Bogen mit der Illustration des Studio-Eingangs – das Signaturelement */
 .hero-visual {
   position: relative;
   isolation: isolate; /* hält die goldene Kontur hinter dem Bogen */
@@ -365,19 +365,18 @@ address { font-style: normal; }
 
 .arch {
   position: relative;
-  display: flex;
-  flex-direction: column;
   aspect-ratio: 3 / 4;
   border-radius: var(--radius-arch);
   overflow: hidden;
   background: var(--c-hafer);
 }
 
-.arch img {
+/* Illustration des Studio-Eingangs füllt den Bogen vollständig */
+.storefront {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* einmalige, ruhige Einblendung beim Laden */
   animation: settle 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -415,23 +414,25 @@ address { font-style: normal; }
   gap: 3rem;
 }
 
-/* Porträt-Illustration im Bogen */
+/* Platzhalter-Porträt: Bogen in Salbei mit Initialen */
 .portrait {
   max-width: 18rem;
 }
 
 .portrait-shape {
+  display: grid;
+  place-items: center;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-arch);
-  overflow: hidden;
-  background: var(--c-salbei);
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.35) 0 22%, transparent 23%),
+    linear-gradient(170deg, #A4B1A0 0%, var(--c-salbei) 100%);
 }
 
-.portrait-shape img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.portrait-initials {
+  font-family: var(--f-serif);
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .portrait-caption {
@@ -509,15 +510,74 @@ address { font-style: normal; }
   font-size: 1.1rem;
 }
 
-/* Illustration oben in jeder Karte, randlos bis zur Kartenkante */
-.service-img {
-  display: block;
-  width: calc(100% + 3.5rem);
-  max-width: none;
-  height: auto;
-  aspect-ratio: 8 / 5;
-  margin: -2rem -1.75rem 1.5rem;
-  border-radius: var(--radius-s) var(--radius-s) 0 0;
+/* Motive: kleine CSS-Formen statt Icons */
+.motif {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.motif-circle {
+  border-radius: 50%;
+  background: var(--c-rose-hell);
+  box-shadow: inset 0 0 0 1px var(--c-rose);
+}
+
+.motif-circle::after {
+  content: "";
+  position: absolute;
+  inset: 30%;
+  border-radius: 50%;
+  border: 1px solid var(--c-salbei);
+}
+
+.motif-arch {
+  width: 2.4rem;
+  border-radius: var(--radius-arch);
+  background: linear-gradient(180deg, var(--c-rose-hell), var(--c-rose));
+}
+
+.motif-drop {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(45deg);
+  background: linear-gradient(135deg, #DCE4D9, #A4B1A0);
+}
+
+.motif-dots {
+  background-image: radial-gradient(circle, var(--c-salbei) 1.6px, transparent 2px);
+  background-size: 0.75rem 0.75rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--c-hafer);
+}
+
+.motif-waves {
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(circle at 50% 120%,
+      transparent 0 5px,
+      var(--c-rose) 5px 6px);
+  box-shadow: inset 0 0 0 1px var(--c-rose);
+}
+
+.motif-line {
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--c-hafer);
+}
+
+.motif-line::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  top: 46%;
+  height: 0.55rem;
+  border-top: 1.5px solid var(--c-tinte);
+  border-radius: 50% 50% 0 0;
 }
 
 
@@ -644,17 +704,6 @@ address { font-style: normal; }
 }
 
 .contact-details p { margin: 0; }
-
-.atelier {
-  margin: var(--space-l) 0 0;
-}
-
-.atelier img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-s);
-}
 
 .contact-form {
   display: grid;

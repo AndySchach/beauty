@@ -51,7 +51,8 @@
 
     <!-- ============================================================
          1. HERO
-         Rechts: ein Bogen mit einer Stillleben-Illustration (images/hero.svg).
+         Rechts: ein Bogen mit drei Farbschichten – angelehnt an die
+         Hautschichten. Reines CSS, keine Bilder.
          ============================================================ -->
     <section class="hero" id="top">
       <div class="container hero-grid">
@@ -68,12 +69,105 @@
           <p class="hero-note">Das erste Hautgespräch ist kostenfrei und unverbindlich.</p>
         </div>
 
+        <!-- Illustration: Eingang des Studios mit Schild (Inline-SVG, keine Bilddatei).
+             Später durch ein Foto ersetzbar: das <svg> durch
+             <img src="studio.jpg" alt="Eingang des Beispielstudios"> austauschen. -->
         <div class="hero-visual">
           <div class="arch">
-            <img src="images/hero.svg" width="300" height="400"
-                 alt="Stillleben mit Eukalyptuszweigen, Pflegeserum, Cremetiegel und Steinen">
+            <svg class="storefront" viewBox="0 0 300 400" role="img" aria-labelledby="storefront-title">
+              <title id="storefront-title">Illustration: Eingang des Beispielstudios mit Schild über der Tür</title>
+              <defs>
+                <linearGradient id="sf-sky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#F6E6E0"/>
+                  <stop offset="1" stop-color="#FBF8F5"/>
+                </linearGradient>
+                <linearGradient id="sf-glass" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#F7E7DA"/>
+                  <stop offset="1" stop-color="#E9CDBE"/>
+                </linearGradient>
+                <radialGradient id="sf-glow" cx="0.5" cy="0.35" r="0.7">
+                  <stop offset="0" stop-color="#FFF6EC"/>
+                  <stop offset="1" stop-color="#E8CFC0"/>
+                </radialGradient>
+              </defs>
+
+              <!-- Himmel -->
+              <rect width="300" height="400" fill="url(#sf-sky)"/>
+
+              <!-- Fassade -->
+              <rect x="18" y="62" width="264" height="300" fill="#EFE6DC"/>
+              <rect x="12" y="56" width="276" height="10" fill="#E3D6C8"/>
+              <rect x="18" y="66" width="264" height="2" fill="#B79B6E" opacity="0.5"/>
+
+              <!-- Eingangsschild -->
+              <rect x="58" y="92" width="184" height="50" rx="2" fill="#5F6F5C"/>
+              <rect x="63" y="97" width="174" height="40" rx="1" fill="none" stroke="#C9B48D" stroke-width="0.8"/>
+              <text x="150" y="121" text-anchor="middle" font-family="'Bodoni Moda', Didot, Georgia, serif" font-size="21" fill="#FBF8F5">Beispielstudio</text>
+              <text x="150" y="132" text-anchor="middle" font-family="Jost, 'Avenir Next', sans-serif" font-size="7" letter-spacing="1.2" fill="#E3D6C8">Kosmetik &amp; Hautpflege</text>
+
+              <!-- Wandleuchten -->
+              <g fill="#B79B6E">
+                <rect x="96" y="178" width="2" height="10"/>
+                <path d="M91 188h12l-2 10h-8z"/>
+                <rect x="202" y="178" width="2" height="10"/>
+                <path d="M197 188h12l-2 10h-8z"/>
+              </g>
+              <circle cx="97" cy="200" r="9" fill="#FFF3E2" opacity="0.6"/>
+              <circle cx="203" cy="200" r="9" fill="#FFF3E2" opacity="0.6"/>
+
+              <!-- Fenster links -->
+              <rect x="32" y="182" width="52" height="112" fill="#5F6F5C"/>
+              <rect x="36" y="186" width="44" height="104" fill="url(#sf-glow)"/>
+              <rect x="57" y="186" width="2" height="104" fill="#5F6F5C"/>
+              <rect x="36" y="250" width="44" height="2" fill="#5F6F5C" opacity="0.6"/>
+              <g fill="#B8A090" opacity="0.8">
+                <rect x="40" y="238" width="5" height="12" rx="1"/>
+                <rect x="47" y="242" width="6" height="8" rx="1"/>
+                <rect x="63" y="236" width="4" height="14" rx="1"/>
+                <circle cx="73" cy="246" r="4"/>
+              </g>
+              <rect x="28" y="294" width="60" height="5" fill="#E3D6C8"/>
+
+              <!-- Fenster rechts -->
+              <rect x="216" y="182" width="52" height="112" fill="#5F6F5C"/>
+              <rect x="220" y="186" width="44" height="104" fill="url(#sf-glow)"/>
+              <rect x="241" y="186" width="2" height="104" fill="#5F6F5C"/>
+              <rect x="220" y="250" width="44" height="2" fill="#5F6F5C" opacity="0.6"/>
+              <g fill="#B8A090" opacity="0.8">
+                <path d="M226 250c0-8 4-14 8-14s6 6 6 14z"/>
+                <rect x="246" y="240" width="5" height="10" rx="1"/>
+                <rect x="253" y="236" width="5" height="14" rx="1"/>
+              </g>
+              <rect x="212" y="294" width="60" height="5" fill="#E3D6C8"/>
+
+              <!-- Tür mit Rundbogen -->
+              <path d="M110 334V200a40 40 0 0 1 80 0v134z" fill="#5F6F5C"/>
+              <path d="M116 334V201a34 34 0 0 1 68 0v133z" fill="url(#sf-glass)"/>
+              <path d="M116 201a34 34 0 0 1 68 0" fill="none" stroke="#5F6F5C" stroke-width="2"/>
+              <rect x="149" y="167" width="2" height="167" fill="#5F6F5C"/>
+              <rect x="116" y="270" width="68" height="64" fill="#7F907B"/>
+              <rect x="141" y="252" width="2" height="14" rx="1" fill="#B79B6E"/>
+              <rect x="157" y="252" width="2" height="14" rx="1" fill="#B79B6E"/>
+              <text x="150" y="228" text-anchor="middle" font-family="'Bodoni Moda', Didot, Georgia, serif" font-style="italic" font-size="8" fill="#8C7B72">Willkommen</text>
+
+              <!-- Pflanzen neben der Tür -->
+              <circle cx="96" cy="300" r="13" fill="#8A9A86"/>
+              <circle cx="88" cy="308" r="9" fill="#7F907B"/>
+              <circle cx="104" cy="309" r="9" fill="#9AA996"/>
+              <path d="M84 318h24l-3 18h-18z" fill="#C8B3A3"/>
+              <circle cx="204" cy="300" r="13" fill="#8A9A86"/>
+              <circle cx="196" cy="309" r="9" fill="#9AA996"/>
+              <circle cx="212" cy="308" r="9" fill="#7F907B"/>
+              <path d="M192 318h24l-3 18h-18z" fill="#C8B3A3"/>
+
+              <!-- Stufen und Gehweg -->
+              <rect x="100" y="334" width="100" height="12" fill="#E3D6C8"/>
+              <rect x="92" y="346" width="116" height="16" fill="#D9CABB"/>
+              <rect x="0" y="362" width="300" height="38" fill="#DCCFC2"/>
+              <rect x="0" y="362" width="300" height="2" fill="#C8B3A3" opacity="0.6"/>
+            </svg>
           </div>
-          <div class="arch-ring"></div>
+          <div class="arch-ring" aria-hidden="true"></div>
         </div>
       </div>
     </section>
@@ -83,10 +177,9 @@
          ============================================================ -->
     <section class="section about" id="ueber">
       <div class="container about-grid">
-        <div class="portrait">
+        <div class="portrait" aria-hidden="true">
           <div class="portrait-shape">
-            <img src="images/portrait.svg" width="320" height="400" loading="lazy"
-                 alt="Illustration einer Fachkosmetikerin">
+            <span class="portrait-initials">BS</span>
           </div>
           <p class="portrait-caption">Ihre Fachkosmetikerin im Beispielstudio</p>
         </div>
@@ -126,7 +219,7 @@
 
     <!-- ============================================================
          3. LEISTUNGEN
-         Sechs Karten mit Dauer und Preis, jeweils mit einer Illustration.
+         Sechs Karten mit Dauer und Preis. Jedes Motiv ist eine CSS-Form.
          ============================================================ -->
     <section class="section services" id="leistungen">
       <div class="container">
@@ -142,7 +235,7 @@
         <div class="service-grid">
 
           <article class="service-card">
-            <img class="service-img" src="images/leistung-analyse.svg" width="320" height="200" loading="lazy" alt="">
+            <div class="motif motif-circle" aria-hidden="true"></div>
             <h3>Hautanalyse &amp; Beratung</h3>
             <p>
               Wir schauen gemeinsam unter der Lupenlampe auf Ihre Haut,
@@ -153,7 +246,7 @@
           </article>
 
           <article class="service-card">
-            <img class="service-img" src="images/leistung-klassisch.svg" width="320" height="200" loading="lazy" alt="">
+            <div class="motif motif-arch" aria-hidden="true"></div>
             <h3>Klassische Gesichtsbehandlung</h3>
             <p>
               Reinigung, sanftes Peeling, Ausreinigung, Maske und eine
@@ -164,7 +257,7 @@
           </article>
 
           <article class="service-card">
-            <img class="service-img" src="images/leistung-aquafacial.svg" width="320" height="200" loading="lazy" alt="">
+            <div class="motif motif-drop" aria-hidden="true"></div>
             <h3>Aquafacial Tiefenreinigung</h3>
             <p>
               Porentiefe Reinigung mit Wasser und Unterdruck, gefolgt von
@@ -175,7 +268,7 @@
           </article>
 
           <article class="service-card">
-            <img class="service-img" src="images/leistung-microneedling.svg" width="320" height="200" loading="lazy" alt="">
+            <div class="motif motif-dots" aria-hidden="true"></div>
             <h3>Microneedling</h3>
             <p>
               Regt die hauteigene Kollagenbildung an und kann feine Linien,
@@ -186,7 +279,7 @@
           </article>
 
           <article class="service-card">
-            <img class="service-img" src="images/leistung-kobido.svg" width="320" height="200" loading="lazy" alt="">
+            <div class="motif motif-waves" aria-hidden="true"></div>
             <h3>Kobido-Gesichtsmassage</h3>
             <p>
               Die traditionelle japanische Massage löst Spannung in Kiefer
@@ -197,7 +290,7 @@
           </article>
 
           <article class="service-card">
-            <img class="service-img" src="images/leistung-brauen.svg" width="320" height="200" loading="lazy" alt="">
+            <div class="motif motif-line" aria-hidden="true"></div>
             <h3>Augenbrauen &amp; Wimpern</h3>
             <p>
               Formen, Färben oder ein natürliches Lifting – abgestimmt auf
@@ -342,11 +435,6 @@
               <p>Dienstag bis Freitag 9–18 Uhr<br>Samstag 9–14 Uhr<br>Termine nur nach Vereinbarung</p>
             </div>
           </address>
-
-          <figure class="atelier">
-            <img src="images/atelier.svg" width="480" height="300" loading="lazy"
-                 alt="Behandlungsraum mit Bogenfenster, Liege und Pflanze">
-          </figure>
         </div>
 
         <form class="contact-form" action="https://formspree.io/f/DEINE-FORM-ID" method="POST">
